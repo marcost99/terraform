@@ -1,3 +1,4 @@
+#sets the provider
 terraform {
   required_providers {
     aws = {
@@ -8,5 +9,5 @@ terraform {
 }
 
 provider "aws" {
-  profile = ""
+  profile = "${var.profile_name}"
 }
