@@ -1,9 +1,5 @@
-#sets the resources that be managemented
-resource "aws_s3_bucket" "s3_bucket" {
-  bucket = "${var.org_name}-bucket-${terraform.workspace}"
-
-  tags = {
-    Name = "First bucket"
-    Iac = true
-  }
+#sets the module
+module "s3" {
+  source         = "./modules/s3"
+  s3_bucket_name = "kabuto-s3"
 }
